@@ -18,9 +18,9 @@ import {
   Instagram, 
   Linkedin 
 } from 'lucide-react'
-import { MapContainer as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet'
-import L from 'leaflet'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import L from 'leaflet'
 
 interface Location {
   name: string
@@ -62,11 +62,12 @@ const staggerContainer = {
 }
 
 const customIcon = L.icon({
-  iconUrl: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
-  iconSize: [38, 38],
-  iconAnchor: [19, 38],
-  popupAnchor: [0, -35],
-})
+  iconUrl: '/marker-icon.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
 const locations: Location[] = [
   { 
@@ -268,7 +269,8 @@ function MapComponent() {
       <MapContainer
         center={[46.603354, 1.888334]}
         zoom={6}
-        className="w-full h-full"
+        scrollWheelZoom={false}
+        style={{ height: '100%', width: '100%' }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

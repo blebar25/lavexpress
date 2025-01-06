@@ -1,11 +1,35 @@
-'use client'
-
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowDown, ArrowRight, Building2, ChevronLeft, ChevronRight, Clock, Droplets, Mail, MapPin, Phone, Waves, Wind, Navigation, Menu, Facebook, Instagram, Linkedin } from 'lucide-react'
-import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet'
+import { 
+  ArrowDown, 
+  ArrowRight, 
+  Building2, 
+  ChevronLeft, 
+  ChevronRight, 
+  Clock, 
+  Droplets, 
+  Mail, 
+  MapPin, 
+  Phone, 
+  Wind, 
+  Navigation, 
+  Menu, 
+  Facebook, 
+  Instagram, 
+  Linkedin 
+} from 'lucide-react'
+import { MapContainer as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+
+interface Location {
+  name: string
+  city: string
+  zip: string
+  lat: number
+  lng: number
+  images: string[]
+}
 
 const fadeInUp = {
   initial: { y: 60, opacity: 0 },
@@ -44,7 +68,7 @@ const customIcon = L.icon({
   popupAnchor: [0, -35],
 })
 
-const locations = [
+const locations: Location[] = [
   { 
     name: '30 rue Pinel',
     city: 'Saint Denis',
@@ -179,7 +203,11 @@ const locations = [
   },
 ]
 
-function LocationCarousel({ images }: { images: string[] }) {
+interface LocationCarouselProps {
+  images: string[]
+}
+
+function LocationCarousel({ images }: LocationCarouselProps) {
   const [currentImage, setCurrentImage] = useState(0)
 
   const nextImage = () => {

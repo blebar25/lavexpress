@@ -265,7 +265,7 @@ function getGoogleMapsUrl(location: { lat: number; lng: number }) {
 function MapComponent() {
   return (
     <div className="h-[500px] w-full rounded-xl overflow-hidden relative z-0 mb-16">
-      <LeafletMap
+      <MapContainer
         center={[46.603354, 1.888334]}
         zoom={6}
         className="w-full h-full"
@@ -297,7 +297,7 @@ function MapComponent() {
             </Popup>
           </Marker>
         ))}
-      </LeafletMap>
+      </MapContainer>
     </div>
   )
 }

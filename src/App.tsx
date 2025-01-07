@@ -61,14 +61,6 @@ const staggerContainer = {
   }
 }
 
-const customIcon = L.icon({
-  iconUrl: '/marker-icon.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41]
-});
-
 const locations: Location[] = [
   { 
     name: '30 rue Pinel',
@@ -280,7 +272,6 @@ function MapComponent() {
           <Marker
             key={index}
             position={[location.lat, location.lng]}
-            icon={customIcon}
           >
             <Popup>
               <div className="text-center p-2">
@@ -456,7 +447,7 @@ export default function App() {
                 </span>
               </h2>
               <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-                Profitez de machines à laver et séchoir Electrolux, adaptés à vos besoins et à des prix compétitifs
+                Profitez de machines à laver et séchoirs Electrolux, adaptés à vos besoins et à des prix compétitifs
               </p>
             </motion.div>
             <motion.div 
@@ -661,7 +652,7 @@ export default function App() {
                   </div>
                 </motion.div>
                 <p className="text-blue-100 text-sm leading-relaxed">
-                  Votre laverie automatique de confiance, disponible 24h/24 et 7j/7 pour répondre à tous vos besoins de lavage.
+                  Votre laverie automatique de confiance, ouverte 7j/7 pour répondre à tous vos besoins de lavage.
                 </p>
               </div>
               
@@ -715,7 +706,7 @@ export default function App() {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-2 text-blue-100">
                     <Clock className="w-4 h-4 flex-shrink-0" />
-                    <span>Ouvert 24h/24</span>
+                    <span>Ouvert de 7H00 à 22H00</span>
                   </div>
                   <div className="flex items-center space-x-2 text-blue-100">
                     <Building2 className="w-4 h-4 flex-shrink-0" />

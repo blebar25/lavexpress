@@ -588,7 +588,7 @@ export default function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Vous souhaitez ouvrir votre propre laverie ?</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Ouvrir votre propre laverie</h2>
               <p className="text-xl text-blue-100">Investissez dans un secteur en pleine croissance avec un accompagnement personnalisé à chaque étape de votre projet.</p>
             </motion.div>
 

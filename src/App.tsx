@@ -309,6 +309,13 @@ export default function App() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <header className={`fixed w-full z-50 transition-all duration-300 ${
@@ -320,6 +327,7 @@ export default function App() {
               className="relative w-40 h-12"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={scrollToTop}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl rotate-3 opacity-70" />
               <div className="absolute inset-0 bg-white rounded-xl -rotate-3" />
@@ -566,65 +574,168 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-purple-900/70" />
             </div>
           </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div 
+            className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <motion.div 
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-16 text-center text-white overflow-hidden relative border border-white/20"
-              initial={{ y: 100, opacity: 0 }}
+              className="text-center mb-16"
+              initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=2942&ixlib=rb-4.0.3')] mix-blend-overlay opacity-10"></div>
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
+              <h2 className="text-4xl font-bold text-white mb-4">Vous souhaitez ouvrir votre propre laverie ?</h2>
+              <p className="text-xl text-blue-100">Investissez dans un secteur en pleine croissance avec un accompagnement personnalisé à chaque étape de votre projet.</p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <motion.div 
+                className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-white/20 relative overflow-hidden group"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.4 }}
+                whileHover={{ scale: 1.02 }}
               >
-                <motion.div 
-                  className="flex justify-center mb-8"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div className="p-4 bg-white/20 rounded-full">
-                    <Building2 className="w-12 h-12 text-white" />
-                  </div>
-                </motion.div>
-                <motion.h2 
-                  className="text-4xl font-bold mb-6"
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.6 }}
-                >
-                  Vous souhaitez ouvrir votre propre laverie ?
-                </motion.h2>
-                <motion.p 
-                  className="text-xl mb-12 max-w-2xl mx-auto text-blue-100"
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
-                >
-                  Nous vous accompagnons durant les différentes étapes de votre projet entrepreneurial. Découvrez nos services et rejoignez un réseau de laveries en pleine expansion.
-                </motion.p>
-                <motion.a 
-                  href="https://market-j.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex items-center px-8 py-4 bg-white text-[#2563EB] rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 1 }}
-                >
-                  En savoir plus
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </motion.a>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 transform group-hover:scale-110 transition-transform duration-500" />
+                <div className="relative z-10">
+                  <motion.div 
+                    className="w-16 h-16 mb-6 text-blue-300"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                  >
+                    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 5H7C5.89543 5 5 5.89543 5 7V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V7C19 5.89543 18.1046 5 17 5H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
+                      <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5C15 6.10457 14.1046 7 13 7H11C9.89543 7 9 6.10457 9 5Z" stroke="currentColor" strokeWidth="2"></path>
+                    </svg>
+                  </motion.div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">Étude personnalisée</h3>
+                  <p className="text-blue-100">Analyse approfondie de l'emplacement et étude de marché détaillée pour maximiser votre réussite.</p>
+                </div>
               </motion.div>
+
+              <motion.div 
+                className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-white/20 relative overflow-hidden group"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 transform group-hover:scale-110 transition-transform duration-500" />
+                <div className="relative z-10">
+                  <motion.div 
+                    className="w-16 h-16 mb-6 text-blue-300"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                  >
+                    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 14C19 16.7614 16.7614 19 14 19C11.2386 19 9 16.7614 9 14C9 11.2386 11.2386 9 14 9C16.7614 9 19 11.2386 19 14Z" stroke="currentColor" strokeWidth="2"></path>
+                      <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2"></path>
+                    </svg>
+                  </motion.div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">Formation complète</h3>
+                  <p className="text-blue-100">Support technique, formation à la gestion et accompagnement continu pour votre réussite.</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-white/20 relative overflow-hidden group"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 transform group-hover:scale-110 transition-transform duration-500" />
+                <div className="relative z-10">
+                  <motion.div 
+                    className="w-16 h-16 mb-6 text-blue-300"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                  >
+                    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 8V12L15 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path>
+                      <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2"></path>
+                    </svg>
+                  </motion.div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">Business plan adapté</h3>
+                  <p className="text-blue-100">Un modèle économique éprouvé avec un retour sur investissement attractif.</p>
+                </div>
+              </motion.div>
+            </div>
+
+            <motion.div 
+              className="flex flex-col sm:flex-row items-center justify-center gap-6"
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 1 }}
+            >
+              <motion.a
+                href="#contact"
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-purple-600"></span>
+                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
+                <span className="relative flex items-center">
+                  Discuter de votre projet
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </span>
+              </motion.a>
+              <motion.a
+                href="#about"
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-200 ease-in-out rounded-full overflow-hidden bg-transparent"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="absolute inset-0 w-full h-full border-2 border-white rounded-full"></span>
+                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
+                <span className="relative flex items-center text-white">
+                  En savoir plus
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+              </motion.a>
             </motion.div>
+          </motion.div>
+          <div className="absolute bottom-0 left-0 w-full overflow-hidden">
+            <div className="relative h-32">
+              <div className="absolute bottom-0 w-full">
+                {/* Premier niveau de vagues */}
+                <svg className="w-full h-24 fill-current text-white/10" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                  <path d="M0,0 C240,120 480,120 720,60 C960,0 1200,0 1440,60 L1440,120 L0,120 Z"></path>
+                </svg>
+                {/* Deuxième niveau de vagues avec animation */}
+                <svg className="absolute bottom-0 w-full h-24 fill-current text-white/20 animate-wave-slow" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                  <path d="M0,60 C360,0 720,120 1080,60 C1260,30 1440,60 1440,60 L1440,120 L0,120 Z"></path>
+                </svg>
+                {/* Troisième niveau de vagues */}
+                <svg className="absolute bottom-0 w-full h-24 fill-current text-white" viewBox="0 0 1440 120" preserveAspectRatio="none">
+                  <path d="M0,120 L1440,120 L1440,60 C1320,90 1200,90 1080,60 C960,30 840,30 720,60 C600,90 480,90 360,60 C240,30 120,30 0,60 Z"></path>
+                </svg>
+              </div>
+              {/* Particules décoratives */}
+              <div className="absolute bottom-0 left-0 w-full h-32 overflow-hidden">
+                <div className="absolute w-2 h-2 bg-white rounded-full opacity-50 animate-float" style={{ left: '10%', bottom: '40%' }}></div>
+                <div className="absolute w-2 h-2 bg-white rounded-full opacity-30 animate-float-delayed" style={{ left: '20%', bottom: '60%' }}></div>
+                <div className="absolute w-2 h-2 bg-white rounded-full opacity-40 animate-float" style={{ left: '30%', bottom: '50%' }}></div>
+                <div className="absolute w-2 h-2 bg-white rounded-full opacity-60 animate-float-delayed" style={{ left: '40%', bottom: '30%' }}></div>
+                <div className="absolute w-2 h-2 bg-white rounded-full opacity-50 animate-float" style={{ left: '60%', bottom: '40%' }}></div>
+                <div className="absolute w-2 h-2 bg-white rounded-full opacity-30 animate-float-delayed" style={{ left: '70%', bottom: '60%' }}></div>
+                <div className="absolute w-2 h-2 bg-white rounded-full opacity-40 animate-float" style={{ left: '80%', bottom: '50%' }}></div>
+                <div className="absolute w-2 h-2 bg-white rounded-full opacity-60 animate-float-delayed" style={{ left: '90%', bottom: '30%' }}></div>
+              </div>
+            </div>
           </div>
         </motion.section>
 

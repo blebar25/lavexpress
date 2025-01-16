@@ -491,6 +491,13 @@ export default function App() {
                     <h3 className="text-xl font-semibold mb-2">{item.type}</h3>
                     <p className="text-gray-600 mb-4">{item.capacity}</p>
                     <p className="text-2xl font-bold text-blue-600">{item.price}</p>
+                    {item.capacity === '6 kg' && (
+                      <div className="mt-4">
+                        <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          Disponible dans les laveries avec badge bleu
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}

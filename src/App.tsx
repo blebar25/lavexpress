@@ -486,18 +486,18 @@ export default function App() {
                   variants={fadeInUp}
                 >
                   <div className="relative group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
-                    <item.icon className="w-12 h-12 text-blue-600 mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">{item.type}</h3>
-                    <p className="text-gray-600 mb-4">{item.capacity}</p>
-                    <p className="text-2xl font-bold text-blue-600">{item.price}</p>
                     {item.capacity === '6 kg' && (
-                      <div className="mt-4">
+                      <div className="absolute top-2 left-2">
                         <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                           Disponible dans les laveries avec badge bleu
                         </span>
                       </div>
                     )}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
+                    <item.icon className="w-12 h-12 text-blue-600 mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">{item.type}</h3>
+                    <p className="text-gray-600 mb-4">{item.capacity}</p>
+                    <p className="text-2xl font-bold text-blue-600">{item.price}</p>
                   </div>
                 </motion.div>
               ))}
@@ -551,7 +551,7 @@ export default function App() {
                         className="w-full h-full object-cover"
                       />
                       {location.has6kgMachines && (
-                        <div className="absolute top-2 right-2">
+                        <div className="absolute top-2 left-2">
                           <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             Machines 6kg
                           </span>

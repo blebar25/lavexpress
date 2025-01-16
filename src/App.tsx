@@ -29,6 +29,7 @@ interface Location {
   lat: number
   lng: number
   images: string[]
+  has6kgMachines: boolean
 }
 
 const fadeInUp = {
@@ -72,7 +73,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1545173168-9f1947eebb7f',
       'https://images.unsplash.com/photo-1582735689369-4fe89db7114c',
       'https://images.unsplash.com/photo-1613743983303-b3e89f8a2b80'
-    ]
+    ],
+    has6kgMachines: true
   },
   { 
     name: '27 rue Ramey',
@@ -84,7 +86,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: true
   },
   { 
     name: '20 rue de Lancry',
@@ -96,7 +99,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: true
   },
   { 
     name: '12 rue Popincourt',
@@ -108,7 +112,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: false
   },
   { 
     name: '3 rue Thiers',
@@ -120,7 +125,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: false
   },
   { 
     name: '52 rue des Gravilliers',
@@ -132,7 +138,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: false
   },
   { 
     name: '122 avenue de Flandre',
@@ -144,7 +151,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: true
   },
   { 
     name: '14 boulevard de la Fédération',
@@ -156,7 +164,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: false
   },
   { 
     name: '3 rue de Douai',
@@ -168,7 +177,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: false
   },
   { 
     name: "61 place de l'Hôtel de Ville",
@@ -180,7 +190,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: false
   },
   { 
     name: '45 Place de la Victoire',
@@ -192,7 +203,8 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
-    ]
+    ],
+    has6kgMachines: false
   },
 ]
 
@@ -466,7 +478,7 @@ export default function App() {
                 { type: 'Machine à laver', capacity: '6 kg', price: '3,80 €', icon: Droplets, note: 'Disponible uniquement à Pinel (St Denis), Flandre, Lancry et Ramey' },
                 { type: 'Machine à laver', capacity: '7 kg', price: '5,00 €', icon: Droplets },
                 { type: 'Machine à laver', capacity: '11 kg', price: '7,80 €', icon: Droplets },
-                { type: 'Machine à laver', capacity: '18 kg', price: '10,00 €', icon: Droplets },
+                { type: 'Machine à laver', capacity: '18 kg', price: '11,90 €', icon: Droplets },
                 { type: 'Séchoir', capacity: '9 minutes', price: '1,50 €', icon: Wind },
               ].map((item, index) => (
                 <motion.div 
@@ -523,9 +535,23 @@ export default function App() {
                 <motion.div
                   key={index}
                   variants={fadeInUp}
+                  className="relative"
                 >
-                  <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                    <LocationCarousel images={location.images} />
+                  <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div className="relative h-48">
+                      <img
+                        src={location.images[0]}
+                        alt={`Laverie ${location.name}`}
+                        className="w-full h-full object-cover"
+                      />
+                      {location.has6kgMachines && (
+                        <div className="absolute top-2 right-2">
+                          <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            Machines 6kg
+                          </span>
+                        </div>
+                      )}
+                    </div>
                     <div className="p-6">
                       <div className="flex items-start space-x-4">
                         <div className="p-3 bg-blue-50 rounded-lg">

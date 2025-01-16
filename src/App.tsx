@@ -352,18 +352,18 @@ export default function App() {
                     scrolled ? 'text-gray-600' : 'text-white'
                   }`}
                 >
-                  +33 01 76 35 06 11
+                  01 76 35 06 11
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className={`w-4 h-4 ${scrolled ? 'text-blue-600' : 'text-white'}`} />
                 <a
-                  href="mailto:lavexpress9@gmail.com"
+                  href="mailto:Lavexpress9@gmail.com"
                   className={`text-sm hover:text-blue-600 transition-colors ${
                     scrolled ? 'text-gray-600' : 'text-white'
                   }`}
                 >
-                  lavexpress9@gmail.com
+                  Lavexpress9@gmail.com
                 </a>
               </div>
             </div>
@@ -463,6 +463,7 @@ export default function App() {
               variants={staggerContainer}
             >
               {[
+                { type: 'Machine à laver', capacity: '6 kg', price: '3,80 €', icon: Droplets, note: 'Disponible uniquement à Pinel (St Denis), Flandre, Lancry et Ramey' },
                 { type: 'Machine à laver', capacity: '7 kg', price: '5,00 €', icon: Droplets },
                 { type: 'Machine à laver', capacity: '11 kg', price: '7,80 €', icon: Droplets },
                 { type: 'Machine à laver', capacity: '18 kg', price: '10,00 €', icon: Droplets },
@@ -473,19 +474,12 @@ export default function App() {
                   variants={fadeInUp}
                 >
                   <div className="relative group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="relative">
-                      <div className="flex justify-center mb-6">
-                        <div className="p-4 bg-blue-50 rounded-full group-hover:scale-110 transition-transform duration-300">
-                          <item.icon className="w-8 h-8 text-blue-600" />
-                        </div>
-                      </div>
-                      <div className="text-center space-y-2 mb-4">
-                        <h3 className="text-xl font-semibold text-gray-900">{item.type}</h3>
-                        <p className="text-xl font-semibold text-gray-900">{item.capacity}</p>
-                      </div>
-                      <p className="text-3xl font-bold text-center text-blue-600">{item.price}</p>
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
+                    <item.icon className="w-12 h-12 text-blue-600 mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">{item.type}</h3>
+                    <p className="text-gray-600 mb-4">{item.capacity}</p>
+                    <p className="text-2xl font-bold text-blue-600">{item.price}</p>
+                    {item.note && <p className="text-sm text-gray-500 mt-2">{item.note}</p>}
                   </div>
                 </motion.div>
               ))}
@@ -799,13 +793,13 @@ export default function App() {
                   <li>
                     <a href="tel:+33176350611" className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2">
                       <Phone className="w-4 h-4" />
-                      <span>+33 01 76 35 06 11</span>
+                      <span>01 76 35 06 11</span>
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:lavexpress9@gmail.com" className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2">
+                    <a href="mailto:Lavexpress9@gmail.com" className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2">
                       <Mail className="w-4 h-4" />
-                      <span>lavexpress9@gmail.com</span>
+                      <span>Lavexpress9@gmail.com</span>
                     </a>
                   </li>
                 </ul>

@@ -271,8 +271,8 @@ function MapComponent() {
   return (
     <div className="h-[500px] w-full rounded-xl overflow-hidden relative z-0 mb-16">
       <MapContainer
-        center={[46.603354, 1.888334]}
-        zoom={6}
+        center={[48.8566, 2.3522]}
+        zoom={5}
         scrollWheelZoom={false}
         style={{ height: '100%', width: '100%' }}
       >
@@ -471,7 +471,7 @@ export default function App() {
               </p>
             </motion.div>
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"
               variants={staggerContainer}
             >
               {[
@@ -479,28 +479,47 @@ export default function App() {
                 { type: 'Machine à laver', capacity: '7 kg', price: '5,00 €', icon: Droplets },
                 { type: 'Machine à laver', capacity: '11 kg', price: '7,80 €', icon: Droplets },
                 { type: 'Machine à laver', capacity: '18 kg', price: '11,90 €', icon: Droplets },
-                { type: 'Séchoir', capacity: '9 minutes', price: '1,50 €', icon: Wind },
               ].map((item, index) => (
                 <motion.div 
                   key={index}
                   variants={fadeInUp}
                 >
-                  <div className="relative group bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <div className="relative group bg-[#F8FBFF] rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100">
                     {item.capacity === '6 kg' && (
-                      <div className="absolute top-2 left-2">
+                      <div className="absolute -top-3 left-4">
                         <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                          Disponible dans les laveries avec badge bleu
+                          Exclusivement
                         </span>
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
-                    <item.icon className="w-12 h-12 text-blue-600 mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">{item.type}</h3>
-                    <p className="text-gray-600 mb-4">{item.capacity}</p>
-                    <p className="text-2xl font-bold text-blue-600">{item.price}</p>
+                    <div className="flex flex-col items-center">
+                      <div className="bg-[#EDF3FF] p-4 rounded-full mb-4">
+                        <item.icon className="w-8 h-8 text-blue-600" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-center mb-1">{item.type}</h3>
+                      <p className="text-gray-600 text-center mb-4">{item.capacity}</p>
+                      <p className="text-3xl font-bold text-blue-600">{item.price}</p>
+                    </div>
                   </div>
                 </motion.div>
               ))}
+            </motion.div>
+            <motion.div
+              className="flex justify-center"
+              variants={fadeInUp}
+            >
+              <div className="w-full max-w-sm">
+                <div className="relative group bg-[#F8FBFF] rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100">
+                  <div className="flex flex-col items-center">
+                    <div className="bg-[#EDF3FF] p-4 rounded-full mb-4">
+                      <Wind className="w-8 h-8 text-blue-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-center mb-1">Séchoir</h3>
+                    <p className="text-gray-600 text-center mb-4">9 minutes</p>
+                    <p className="text-3xl font-bold text-blue-600">1,50 €</p>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         </section>
@@ -534,7 +553,7 @@ export default function App() {
               <MapComponent />
             </motion.div>
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 auto-rows-fr"
               variants={staggerContainer}
             >
               {locations.map((location, index) => (
@@ -564,9 +583,12 @@ export default function App() {
                           <MapPin className="w-6 h-6 text-blue-600" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">{location.name}</p>
-                          <p className="text-gray-600">
-                            {location.city}, {location.zip}
+                          <p style={{ fontSize: '12px' }} className="font-semibold text-gray-900">{location.name}</p>
+                          <p style={{ fontSize: '12px' }} className="text-gray-600">
+                            {location.city}
+                          </p>
+                          <p style={{ fontSize: '12px' }} className="text-gray-600">
+                            {location.zip}
                           </p>
                         </div>
                       </div>

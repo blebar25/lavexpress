@@ -475,7 +475,7 @@ export default function App() {
               variants={staggerContainer}
             >
               {[
-                { type: 'Machine à laver', capacity: '6 kg', price: '3,80 €', icon: Droplets, note: 'Disponible uniquement à Pinel (St Denis), Flandre, Lancry et Ramey' },
+                { type: 'Machine à laver', capacity: '6 kg', price: '3,80 €', icon: Droplets },
                 { type: 'Machine à laver', capacity: '7 kg', price: '5,00 €', icon: Droplets },
                 { type: 'Machine à laver', capacity: '11 kg', price: '7,80 €', icon: Droplets },
                 { type: 'Machine à laver', capacity: '18 kg', price: '11,90 €', icon: Droplets },
@@ -491,7 +491,6 @@ export default function App() {
                     <h3 className="text-xl font-semibold mb-2">{item.type}</h3>
                     <p className="text-gray-600 mb-4">{item.capacity}</p>
                     <p className="text-2xl font-bold text-blue-600">{item.price}</p>
-                    {item.note && <p className="text-sm text-gray-500 mt-2">{item.note}</p>}
                   </div>
                 </motion.div>
               ))}

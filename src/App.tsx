@@ -401,8 +401,8 @@ export default function App() {
           <div className="absolute inset-0">
             <div className="relative h-full">
               <motion.img
-                src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&q=80&w=2942&ixlib=rb-4.0.3"
-                alt="Laverie moderne"
+                src="/lavexpress/images/laverie.jpg"
+                alt="Lav Express"
                 className="w-full h-full object-cover"
                 initial={{ scale: 1.1, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}

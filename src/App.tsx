@@ -576,14 +576,10 @@ export default function App() {
                   className="relative"
                 >
                   <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                    <div className="relative h-48">
-                      <img
-                        src={location.images[0]}
-                        alt={`Laverie ${location.name}`}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="relative">
+                      <LocationCarousel images={location.images} />
                       {location.has6kgMachines && (
-                        <div className="absolute top-2 left-2">
+                        <div className="absolute top-2 left-2 z-10">
                           <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             Machines 6kg
                           </span>
@@ -775,10 +771,6 @@ export default function App() {
                 {/* Premier niveau de vagues */}
                 <svg className="w-full h-24 fill-current text-white/10" viewBox="0 0 1440 120" preserveAspectRatio="none">
                   <path d="M0,0 C240,120 480,120 720,60 C960,0 1200,0 1440,60 L1440,120 L0,120 Z"></path>
-                </svg>
-                {/* Deuxième niveau de vagues avec animation */}
-                <svg className="absolute bottom-0 w-full h-24 fill-current text-white/20 animate-wave-slow" viewBox="0 0 1440 120" preserveAspectRatio="none">
-                  <path d="M0,60 C360,0 720,120 1080,60 C1260,30 1440,60 1440,60 L1440,120 L0,120 Z"></path>
                 </svg>
                 {/* Troisième niveau de vagues */}
                 <svg className="absolute bottom-0 w-full h-24 fill-current text-white" viewBox="0 0 1440 120" preserveAspectRatio="none">

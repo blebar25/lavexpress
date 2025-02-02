@@ -87,7 +87,7 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1582735689369-4fe89db7114c',
       'https://images.unsplash.com/photo-1613743983303-b3e89f8a2b80'
     ],
-    has6kgMachines: true
+    has6kgMachines: false
   },
   { 
     name: '27 rue Ramey',
@@ -100,7 +100,7 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
     ],
-    has6kgMachines: true
+    has6kgMachines: false
   },
   { 
     name: '20 rue de Lancry',
@@ -113,7 +113,7 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
     ],
-    has6kgMachines: true
+    has6kgMachines: false
   },
   { 
     name: '12 rue Popincourt',
@@ -165,7 +165,7 @@ const locations: Location[] = [
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
     ],
-    has6kgMachines: true
+    has6kgMachines: false
   },
   { 
     name: '14 boulevard de la Fédération',
@@ -480,7 +480,7 @@ export default function App() {
                 </span>
               </h2>
               <p className="text-xl text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-                Profitez de machines à laver et séchoirs Electrolux, adaptés à vos besoins et à des prix compétitifs
+                Profitez de machines à laver <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xl font-medium bg-blue-500 text-white">rapides et super essorantes</span>, ainsi que de séchoirs Electrolux, adaptés à vos besoins et à des prix compétitifs
               </p>
             </motion.div>
             <motion.div 
@@ -500,9 +500,9 @@ export default function App() {
                   <div className="relative group bg-[#F8FBFF] rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100">
                     {item.capacity === '6 kg' && (
                       <div className="absolute -top-3 left-4">
-                        <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        {/* <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                           Exclusivement
-                        </span>
+                        </span> */}
                       </div>
                     )}
                     <div className="flex flex-col items-center">
@@ -580,9 +580,9 @@ export default function App() {
                       <LocationCarousel images={location.images} />
                       {location.has6kgMachines && (
                         <div className="absolute top-2 left-2 z-10">
-                          <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          {/* <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             Machines 6kg
-                          </span>
+                          </span> */}
                         </div>
                       )}
                     </div>
@@ -645,18 +645,65 @@ export default function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Ouvrir votre propre laverie</h2>
-              <p className="text-xl text-blue-100">Investissez dans un secteur en pleine croissance avec un accompagnement personnalisé à chaque étape de votre projet.</p>
+              <motion.h2 
+                className="text-4xl font-bold mb-4 relative cursor-pointer"
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.8,
+                  type: "spring",
+                  bounce: 0.5
+                }}
+                animate={{
+                  y: [0, -10, 0],
+                  transition: {
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }
+                }}
+                style={{
+                  color: "white",
+                  backgroundImage: "linear-gradient(45deg, #FF6B6B, #4ECDC4)",
+                  backgroundSize: "100%",
+                  backgroundRepeat: "repeat",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  textShadow: "none"
+                }}
+              >
+                Ouvrir votre propre laverie
+              </motion.h2>
+              <motion.p 
+                className="text-xl text-blue-100"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.3,
+                  type: "spring",
+                  bounce: 0.4
+                }}
+              >
+                Investissez dans un secteur en pleine croissance avec un accompagnement personnalisé à chaque étape de votre projet.
+              </motion.p>
             </motion.div>
+
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               <motion.div 
                 className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-white/20 relative overflow-hidden group"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                whileHover={{ scale: 1.02 }}
+                transition={{ 
+                  duration: 0.8,
+                  type: "spring",
+                  bounce: 0.4,
+                  delay: 0.2
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 transform group-hover:scale-110 transition-transform duration-500" />
                 <div className="relative z-10">
@@ -677,11 +724,15 @@ export default function App() {
 
               <motion.div 
                 className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-white/20 relative overflow-hidden group"
-                initial={{ y: 50, opacity: 0 }}
+                initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                whileHover={{ scale: 1.02 }}
+                transition={{ 
+                  duration: 0.8,
+                  type: "spring",
+                  bounce: 0.4,
+                  delay: 0.4
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 transform group-hover:scale-110 transition-transform duration-500" />
                 <div className="relative z-10">
@@ -702,11 +753,15 @@ export default function App() {
 
               <motion.div 
                 className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-white/20 relative overflow-hidden group"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
+                initial={{ x: 100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                whileHover={{ scale: 1.02 }}
+                transition={{ 
+                  duration: 0.8,
+                  type: "spring",
+                  bounce: 0.4,
+                  delay: 0.6
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 transform group-hover:scale-110 transition-transform duration-500" />
                 <div className="relative z-10">
@@ -736,8 +791,6 @@ export default function App() {
               <motion.a
                 href="#contact"
                 className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-purple-600"></span>
                 <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
@@ -751,8 +804,6 @@ export default function App() {
               <motion.a
                 href="#about"
                 className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-200 ease-in-out rounded-full overflow-hidden bg-transparent"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 <span className="absolute inset-0 w-full h-full border-2 border-white rounded-full"></span>
                 <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>

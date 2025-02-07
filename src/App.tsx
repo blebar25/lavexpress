@@ -80,8 +80,8 @@ const locations: Location[] = [
     name: '30 rue Pinel',
     city: 'Saint Denis',
     zip: '93200',
-    lat: 48.9362,
-    lng: 2.3574,
+    lat: 48.9310795,
+    lng: 2.3582699,
     images: [
       'https://images.unsplash.com/photo-1545173168-9f1947eebb7f',
       'https://images.unsplash.com/photo-1582735689369-4fe89db7114c',
@@ -93,8 +93,8 @@ const locations: Location[] = [
     name: '27 rue Ramey',
     city: 'Paris',
     zip: '75018',
-    lat: 48.8878,
-    lng: 2.3476,
+    lat: 48.888606,
+    lng: 2.346681,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -106,8 +106,8 @@ const locations: Location[] = [
     name: '20 rue de Lancry',
     city: 'Paris',
     zip: '75010',
-    lat: 48.8697,
-    lng: 2.3628,
+    lat: 48.8699915,
+    lng: 2.3609963,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -119,8 +119,8 @@ const locations: Location[] = [
     name: '12 rue Popincourt',
     city: 'Paris',
     zip: '75011',
-    lat: 48.8589,
-    lng: 2.3747,
+    lat: 48.8573974,
+    lng: 2.3774104,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -132,8 +132,8 @@ const locations: Location[] = [
     name: '3 rue Thiers',
     city: 'Marseille',
     zip: '13001',
-    lat: 43.2965,
-    lng: 5.3698,
+    lat: 43.2991812,
+    lng: 5.3848223,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -145,8 +145,8 @@ const locations: Location[] = [
     name: '52 rue des Gravilliers',
     city: 'Paris',
     zip: '75004',
-    lat: 48.8637,
-    lng: 2.3542,
+    lat: 48.8643283,
+    lng: 2.3556424,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -158,8 +158,8 @@ const locations: Location[] = [
     name: '122 avenue de Flandre',
     city: 'Paris',
     zip: '75019',
-    lat: 48.8912,
-    lng: 2.3769,
+    lat: 48.8924342,
+    lng: 2.3795358,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -171,8 +171,8 @@ const locations: Location[] = [
     name: '14 boulevard de la Fédération',
     city: 'Marseille',
     zip: '13004',
-    lat: 43.3017,
-    lng: 5.3931,
+    lat: 43.3110358,
+    lng: 5.4023875,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -184,8 +184,8 @@ const locations: Location[] = [
     name: '3 rue de Douai',
     city: 'Lille',
     zip: '59000',
-    lat: 50.6292,
-    lng: 3.0573,
+    lat: 50.624145,
+    lng: 3.0685508,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -197,8 +197,8 @@ const locations: Location[] = [
     name: "61 place de l'Hôtel de Ville",
     city: "Villeneuve d'Ascq",
     zip: '59650',
-    lat: 50.6192,
-    lng: 3.1319,
+    lat: 50.6199,
+    lng: 3.130538,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -210,8 +210,8 @@ const locations: Location[] = [
     name: '45 Place de la Victoire',
     city: 'Tourcoing',
     zip: '59200',
-    lat: 50.7249,
-    lng: 3.1613,
+    lat: 50.7172396,
+    lng: 3.1570098,
     images: [
       'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
       'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
@@ -276,8 +276,9 @@ function LocationCarousel({ images }: LocationCarouselProps) {
   )
 }
 
-function getGoogleMapsUrl(location: { lat: number; lng: number }) {
-  return `https://www.google.com/maps/dir/?api=1&destination=${location.lat},${location.lng}`
+function getGoogleMapsUrl(location: Location) {
+  const address = encodeURIComponent(`${location.name}, ${location.zip} ${location.city}`);
+  return `https://www.google.com/maps/search/?api=1&query=${address}`;
 }
 
 function MapComponent() {
@@ -788,32 +789,34 @@ export default function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 1 }}
             >
-              <motion.a
-                href="#contact"
-                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden"
-              >
-                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-purple-600"></span>
-                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
-                <span className="relative flex items-center">
-                  Discuter de votre projet
-                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                  </svg>
-                </span>
-              </motion.a>
-              <motion.a
-                href="#about"
-                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-200 ease-in-out rounded-full overflow-hidden bg-transparent"
-              >
-                <span className="absolute inset-0 w-full h-full border-2 border-white rounded-full"></span>
-                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
-                <span className="relative flex items-center text-white">
-                  En savoir plus
-                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                  </svg>
-                </span>
-              </motion.a>
+<motion.a
+  href="mailto:contact@laveriexpert.com?subject=Discuter de votre projet"
+  className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden"
+>
+  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-purple-600"></span>
+  <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
+  <span className="relative flex items-center">
+    Discuter de votre projet
+    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+    </svg>
+  </span>
+</motion.a>
+
+<motion.a
+  href="mailto:contact@laveriexpert.com?subject=En savoir plus"
+  className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-200 ease-in-out rounded-full overflow-hidden bg-transparent"
+>
+  <span className="absolute inset-0 w-full h-full border-2 border-white rounded-full"></span>
+  <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
+  <span className="relative flex items-center text-white">
+    En savoir plus
+    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+    </svg>
+  </span>
+</motion.a>
+
             </motion.div>
           </motion.div>
           <div className="absolute bottom-0 left-0 w-full overflow-hidden">

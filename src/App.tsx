@@ -16,13 +16,15 @@ import {
   Menu, 
   Facebook, 
   Instagram, 
-  Linkedin 
+  Linkedin,
+  FileText
 } from 'lucide-react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import icon from 'leaflet/dist/images/marker-icon.png'
 import iconShadow from 'leaflet/dist/images/marker-shadow.png'
+import LegalNotice from './components/LegalNotice'
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -323,6 +325,7 @@ function MapComponent() {
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false)
+  const [showLegalNotice, setShowLegalNotice] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -344,6 +347,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <AnimatePresence>
+        {showLegalNotice && (
+          <LegalNotice onClose={() => setShowLegalNotice(false)} />
+        )}
+      </AnimatePresence>
       <header className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
       }`}>
@@ -743,8 +751,7 @@ export default function App() {
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                   >
                     <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 14C19 16.7614 16.7614 19 14 19C11.2386 19 9 16.7614 9 14C9 11.2386 11.2386 9 14 9C16.7614 9 19 11.2386 19 14Z" stroke="currentColor" strokeWidth="2"></path>
-                      <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2"></path>
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                     </svg>
                   </motion.div>
                   <h3 className="text-2xl font-semibold text-white mb-4">Formation complète</h3>
@@ -789,33 +796,49 @@ export default function App() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 1 }}
             >
-<motion.a
-  href="mailto:contact@laveriexpert.com?subject=Discuter de votre projet"
-  className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden"
->
-  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-purple-600"></span>
-  <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
-  <span className="relative flex items-center">
-    Discuter de votre projet
-    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-    </svg>
-  </span>
-</motion.a>
+              <motion.a
+                href="mailto:contact@laveriexpert.com?subject=Discuter de votre projet"
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden"
+              >
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-600 to-purple-600"></span>
+                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
+                <span className="relative flex items-center">
+                  Discuter de votre projet
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </span>
+              </motion.a>
 
-<motion.a
-  href="mailto:contact@laveriexpert.com?subject=En savoir plus"
-  className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-200 ease-in-out rounded-full overflow-hidden bg-transparent"
->
-  <span className="absolute inset-0 w-full h-full border-2 border-white rounded-full"></span>
-  <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
-  <span className="relative flex items-center text-white">
-    En savoir plus
-    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-    </svg>
-  </span>
-</motion.a>
+              <motion.a
+                href="mailto:contact@laveriexpert.com?subject=En savoir plus"
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium transition-all duration-200 ease-in-out rounded-full overflow-hidden bg-transparent"
+              >
+                <span className="absolute inset-0 w-full h-full border-2 border-white rounded-full"></span>
+                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
+                <span className="relative flex items-center text-white">
+                  En savoir plus
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+              </motion.a>
+
+              {/* <motion.a
+                href="https://www.linkedin.com/company/laveriexpert"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden"
+              >
+                <span className="absolute inset-0 w-full h-full bg-[#0077b5]"></span>
+                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
+                <span className="relative flex items-center">
+                  LinkedIn
+                  <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </span>
+              </motion.a> */}
 
             </motion.div>
           </motion.div>
@@ -895,6 +918,15 @@ export default function App() {
                       <ArrowRight className="w-4 h-4" />
                       <span>Ouvrir une laverie</span>
                     </a>
+                  </li>
+                  <li>
+                  <button
+                      onClick={() => setShowLegalNotice(true)}
+                      className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2"
+                    >
+                      <ArrowRight className="w-4 h-4" />
+                      <span>Mentions légales</span>
+                    </button>
                   </li>
                 </ul>
               </div>

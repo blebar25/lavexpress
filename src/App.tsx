@@ -98,9 +98,9 @@ const locations: Location[] = [
     lat: 48.888606,
     lng: 2.346681,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      '/src/assets/images/Fédération/Ramey_1.jpeg',
+      '/src/assets/images/Fédération/Ramey_2.jpeg',
+      '/src/assets/images/Fédération/Ramey_3.jpeg'
     ],
     has6kgMachines: false
   },
@@ -111,9 +111,11 @@ const locations: Location[] = [
     lat: 48.8699915,
     lng: 2.3609963,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      '/src/assets/images/Fédération/Lancry_1.jpeg',
+      '/src/assets/images/Fédération/Lancry_2.jpeg',
+      '/src/assets/images/Fédération/Lancry_3.jpeg',
+      '/src/assets/images/Fédération/Lancry_4.jpeg',
+      '/src/assets/images/Fédération/Lancry_5.jpeg'
     ],
     has6kgMachines: false
   },
@@ -150,9 +152,9 @@ const locations: Location[] = [
     lat: 48.8643283,
     lng: 2.3556424,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      '/src/assets/images/Fédération/GRAVILLIERS_06.jpg',
+      '/src/assets/images/Fédération/GRAVILLIERS_07.jpg',
+      '/src/assets/images/Fédération/GRAVILLIERS_10.jpg'
     ],
     has6kgMachines: false
   },
@@ -163,9 +165,13 @@ const locations: Location[] = [
     lat: 48.8924342,
     lng: 2.3795358,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      '/src/assets/images/Fédération/Fédé_1.jpeg',
+      '/src/assets/images/Fédération/Fédé_2.jpeg',
+      '/src/assets/images/Fédération/Fédé_3.jpeg',
+      '/src/assets/images/Fédération/Fédé_4.jpeg',
+      '/src/assets/images/Fédération/Fédé_5.jpeg',
+      '/src/assets/images/Fédération/Fédé_6.jpeg',
+      '/src/assets/images/Fédération/Fédé_7.jpeg'
     ],
     has6kgMachines: false
   },
@@ -176,9 +182,11 @@ const locations: Location[] = [
     lat: 43.3110358,
     lng: 5.4023875,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      '/src/assets/images/Fédération/Flandre_1.jpeg',
+      '/src/assets/images/Fédération/Flandre_2.jpeg',
+      '/src/assets/images/Fédération/Flandre_3.jpeg',
+      '/src/assets/images/Fédération/Flandre_4.jpeg',
+      '/src/assets/images/Fédération/Flandre_5.jpeg'
     ],
     has6kgMachines: false
   },
@@ -189,9 +197,11 @@ const locations: Location[] = [
     lat: 50.624145,
     lng: 3.0685508,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      '/src/assets/images/Douai/IMG_2083.JPG',
+      '/src/assets/images/Douai/IMG_2084.JPG',
+      '/src/assets/images/Douai/IMG_2085.JPG',
+      '/src/assets/images/Douai/IMG_2086.JPG',
+      '/src/assets/images/Douai/IMG_2087.JPG'
     ],
     has6kgMachines: false
   },
@@ -202,9 +212,10 @@ const locations: Location[] = [
     lat: 50.6199,
     lng: 3.130538,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      '/src/assets/images/V2/V2_1.jpeg',
+      '/src/assets/images/V2/V2_2.jpeg',
+      '/src/assets/images/V2/V2_3.jpeg',
+      '/src/assets/images/V2/V2_4.jpeg'
     ],
     has6kgMachines: false
   },

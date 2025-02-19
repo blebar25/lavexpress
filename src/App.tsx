@@ -87,7 +87,7 @@ const locations: Location[] = [
     images: [
       'https://images.unsplash.com/photo-1545173168-9f1947eebb7f',
       'https://images.unsplash.com/photo-1582735689369-4fe89db7114c',
-      'https://images.unsplash.com/photo-1613743983303-b3e89f8a2b80'
+      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
     ],
     has6kgMachines: false
   },
@@ -98,9 +98,9 @@ const locations: Location[] = [
     lat: 48.888606,
     lng: 2.346681,
     images: [
-      '/src/assets/images/Fédération/Ramey_1.jpeg',
-      '/src/assets/images/Fédération/Ramey_2.jpeg',
-      '/src/assets/images/Fédération/Ramey_3.jpeg'
+      new URL('./assets/images/Ramey/Ramey_1.jpeg', import.meta.url).href,
+      new URL('./assets/images/Ramey/Ramey_2.jpeg', import.meta.url).href,
+      new URL('./assets/images/Ramey/Ramey_3.jpeg', import.meta.url).href
     ],
     has6kgMachines: false
   },
@@ -111,11 +111,11 @@ const locations: Location[] = [
     lat: 48.8699915,
     lng: 2.3609963,
     images: [
-      '/src/assets/images/Fédération/Lancry_1.jpeg',
-      '/src/assets/images/Fédération/Lancry_2.jpeg',
-      '/src/assets/images/Fédération/Lancry_3.jpeg',
-      '/src/assets/images/Fédération/Lancry_4.jpeg',
-      '/src/assets/images/Fédération/Lancry_5.jpeg'
+      new URL('./assets/images/Lancry/Lancry_1.jpeg', import.meta.url).href,
+      new URL('./assets/images/Lancry/Lancry_2.jpeg', import.meta.url).href,
+      new URL('./assets/images/Lancry/Lancry_3.jpeg', import.meta.url).href,
+      new URL('./assets/images/Lancry/Lancry_4.jpeg', import.meta.url).href,
+      new URL('./assets/images/Lancry/Lancry_5.jpeg', import.meta.url).href
     ],
     has6kgMachines: false
   },
@@ -126,8 +126,8 @@ const locations: Location[] = [
     lat: 48.8573974,
     lng: 2.3774104,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
+      'https://images.unsplash.com/photo-1545173168-9f1947eebb7f',
+      'https://images.unsplash.com/photo-1582735689369-4fe89db7114c',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
     ],
     has6kgMachines: false
@@ -139,8 +139,8 @@ const locations: Location[] = [
     lat: 43.2991812,
     lng: 5.3848223,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
+      'https://images.unsplash.com/photo-1545173168-9f1947eebb7f',
+      'https://images.unsplash.com/photo-1582735689369-4fe89db7114c',
       'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
     ],
     has6kgMachines: false
@@ -152,9 +152,9 @@ const locations: Location[] = [
     lat: 48.8643283,
     lng: 2.3556424,
     images: [
-      '/src/assets/images/Fédération/GRAVILLIERS_06.jpg',
-      '/src/assets/images/Fédération/GRAVILLIERS_07.jpg',
-      '/src/assets/images/Fédération/GRAVILLIERS_10.jpg'
+      new URL('./assets/images/Gravilliers/GRAVILLIERS_06.jpg', import.meta.url).href,
+      new URL('./assets/images/Gravilliers/GRAVILLIERS_07.jpg', import.meta.url).href,
+      new URL('./assets/images/Gravilliers/GRAVILLIERS_10.jpg', import.meta.url).href
     ],
     has6kgMachines: false
   },
@@ -165,13 +165,11 @@ const locations: Location[] = [
     lat: 48.8924342,
     lng: 2.3795358,
     images: [
-      '/src/assets/images/Fédération/Fédé_1.jpeg',
-      '/src/assets/images/Fédération/Fédé_2.jpeg',
-      '/src/assets/images/Fédération/Fédé_3.jpeg',
-      '/src/assets/images/Fédération/Fédé_4.jpeg',
-      '/src/assets/images/Fédération/Fédé_5.jpeg',
-      '/src/assets/images/Fédération/Fédé_6.jpeg',
-      '/src/assets/images/Fédération/Fédé_7.jpeg'
+      new URL('./assets/images/Flandre/Flandre_1.jpeg', import.meta.url).href,
+      new URL('./assets/images/Flandre/Flandre_2.jpeg', import.meta.url).href,
+      new URL('./assets/images/Flandre/Flandre_3.jpeg', import.meta.url).href,
+      new URL('./assets/images/Flandre/Flandre_4.jpeg', import.meta.url).href,
+      new URL('./assets/images/Flandre/Flandre_5.jpeg', import.meta.url).href
     ],
     has6kgMachines: false
   },
@@ -182,11 +180,13 @@ const locations: Location[] = [
     lat: 43.3110358,
     lng: 5.4023875,
     images: [
-      '/src/assets/images/Fédération/Flandre_1.jpeg',
-      '/src/assets/images/Fédération/Flandre_2.jpeg',
-      '/src/assets/images/Fédération/Flandre_3.jpeg',
-      '/src/assets/images/Fédération/Flandre_4.jpeg',
-      '/src/assets/images/Fédération/Flandre_5.jpeg'
+      new URL('./assets/images/Fédération/Fédé_1.jpeg', import.meta.url).href,
+      new URL('./assets/images/Fédération/Fédé_2.jpeg', import.meta.url).href,
+      new URL('./assets/images/Fédération/Fédé_3.jpeg', import.meta.url).href,
+      new URL('./assets/images/Fédération/Fédé_4.jpeg', import.meta.url).href,
+      new URL('./assets/images/Fédération/Fédé_5.jpeg', import.meta.url).href,
+      new URL('./assets/images/Fédération/Fédé_6.jpeg', import.meta.url).href,
+      new URL('./assets/images/Fédération/Fédé_7.jpeg', import.meta.url).href
     ],
     has6kgMachines: false
   },
@@ -197,11 +197,11 @@ const locations: Location[] = [
     lat: 50.624145,
     lng: 3.0685508,
     images: [
-      '/src/assets/images/Douai/IMG_2083.JPG',
-      '/src/assets/images/Douai/IMG_2084.JPG',
-      '/src/assets/images/Douai/IMG_2085.JPG',
-      '/src/assets/images/Douai/IMG_2086.JPG',
-      '/src/assets/images/Douai/IMG_2087.JPG'
+      new URL('./assets/images/Douai/IMG_2083.JPG', import.meta.url).href,
+      new URL('./assets/images/Douai/IMG_2084.JPG', import.meta.url).href,
+      new URL('./assets/images/Douai/IMG_2085.JPG', import.meta.url).href,
+      new URL('./assets/images/Douai/IMG_2086.JPG', import.meta.url).href,
+      new URL('./assets/images/Douai/IMG_2087.JPG', import.meta.url).href
     ],
     has6kgMachines: false
   },
@@ -212,10 +212,10 @@ const locations: Location[] = [
     lat: 50.6199,
     lng: 3.130538,
     images: [
-      '/src/assets/images/V2/V2_1.jpeg',
-      '/src/assets/images/V2/V2_2.jpeg',
-      '/src/assets/images/V2/V2_3.jpeg',
-      '/src/assets/images/V2/V2_4.jpeg'
+      new URL('./assets/images/V2/V2_1.jpeg', import.meta.url).href,
+      new URL('./assets/images/V2/V2_2.jpeg', import.meta.url).href,
+      new URL('./assets/images/V2/V2_3.jpeg', import.meta.url).href,
+      new URL('./assets/images/V2/V2_4.jpeg', import.meta.url).href
     ],
     has6kgMachines: false
   },
@@ -226,9 +226,12 @@ const locations: Location[] = [
     lat: 50.7172396,
     lng: 3.1570098,
     images: [
-      'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac',
-      'https://images.unsplash.com/photo-1528823872057-9c018a7a7553',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      new URL('./assets/images/Victoire/IMG_2117.jpg', import.meta.url).href,
+      new URL('./assets/images/Victoire/IMG_2118.jpg', import.meta.url).href,
+      new URL('./assets/images/Victoire/IMG_2119.jpg', import.meta.url).href,
+      new URL('./assets/images/Victoire/IMG_2120.jpg', import.meta.url).href,
+      new URL('./assets/images/Victoire/IMG_2121.jpg', import.meta.url).href,
+      new URL('./assets/images/Victoire/IMG_2122.jpg', import.meta.url).href
     ],
     has6kgMachines: false
   },
@@ -250,7 +253,7 @@ function LocationCarousel({ images }: LocationCarouselProps) {
   }
 
   return (
-    <div className="relative h-48">
+    <div className="relative h-40 sm:h-48 md:h-56">
       <AnimatePresence mode="wait">
         <motion.img
           key={currentImage}
@@ -296,7 +299,7 @@ function getGoogleMapsUrl(location: Location) {
 
 function MapComponent() {
   return (
-    <div className="h-[500px] w-full rounded-xl overflow-hidden relative z-0 mb-16">
+    <div className="h-[300px] sm:h-[400px] md:h-[500px] w-full rounded-xl overflow-hidden relative z-0 mb-8 sm:mb-16">
       <MapContainer
         center={[48.8566, 2.3522]}
         zoom={5}
@@ -417,7 +420,7 @@ export default function App() {
       </header>
 
       <main>
-        <section className="relative min-h-screen flex items-center justify-center">
+        <section className="relative min-h-screen flex items-center justify-center py-32 sm:py-40">
           <div className="absolute inset-0">
             <div className="relative h-full">
               <motion.img
@@ -504,7 +507,7 @@ export default function App() {
               </p>
             </motion.div>
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-8"
               variants={staggerContainer}
             >
               {[
@@ -517,21 +520,14 @@ export default function App() {
                   key={index}
                   variants={fadeInUp}
                 >
-                  <div className="relative group bg-[#F8FBFF] rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100">
-                    {item.capacity === '6 kg' && (
-                      <div className="absolute -top-3 left-4">
-                        {/* <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                          Exclusivement
-                        </span> */}
-                      </div>
-                    )}
+                  <div className="relative group bg-[#F8FBFF] rounded-xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-blue-100 h-full">
                     <div className="flex flex-col items-center">
                       <div className="bg-[#EDF3FF] p-4 rounded-full mb-4">
-                        <item.icon className="w-8 h-8 text-blue-600" />
+                        <item.icon className="w-8 h-8 md:w-10 md:h-10 text-blue-600" />
                       </div>
-                      <h3 className="text-xl font-semibold text-center mb-1">{item.type}</h3>
-                      <p className="text-gray-600 text-center mb-4">{item.capacity}</p>
-                      <p className="text-3xl font-bold text-blue-600">{item.price}</p>
+                      <h3 className="text-lg md:text-xl font-semibold text-center mb-1">{item.type}</h3>
+                      <p className="text-gray-600 text-center mb-4 text-sm md:text-base">{item.capacity}</p>
+                      <p className="text-2xl md:text-3xl font-bold text-blue-600">{item.price}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -542,7 +538,7 @@ export default function App() {
               variants={fadeInUp}
             >
               <div className="w-full max-w-sm">
-                <div className="relative group bg-[#F8FBFF] rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-blue-100">
+                <div className="relative group bg-[#F8FBFF] rounded-xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-blue-100">
                   <div className="flex flex-col items-center">
                     <div className="bg-[#EDF3FF] p-4 rounded-full mb-4">
                       <Wind className="w-8 h-8 text-blue-600" />
@@ -586,7 +582,7 @@ export default function App() {
               <MapComponent />
             </motion.div>
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 auto-rows-fr"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
               variants={staggerContainer}
             >
               {locations.map((location, index) => (
@@ -609,7 +605,7 @@ export default function App() {
                     <div className="p-6">
                       <div className="flex items-start space-x-4">
                         <div className="p-3 bg-blue-50 rounded-lg">
-                          <MapPin className="w-6 h-6 text-blue-600" />
+                          <MapPin className="w-6 h-6" />
                         </div>
                         <div>
                           <p style={{ fontSize: '12px' }} className="font-semibold text-gray-900">{location.name}</p>
@@ -761,8 +757,8 @@ export default function App() {
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                   >
-                    <svg className="w-full h-full" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3ZM18.82 9L12 12.72L5.18 9L12 5.28L18.82 9ZM17 15.99L12 18.72L7 15.99V12.27L12 15L17 12.27V15.99Z"/>
                     </svg>
                   </motion.div>
                   <h3 className="text-2xl font-semibold text-white mb-4">Formation complète</h3>
@@ -816,7 +812,7 @@ export default function App() {
                 <span className="relative flex items-center">
                   Discuter de votre projet
                   <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
                 </span>
               </motion.a>
@@ -845,7 +841,7 @@ export default function App() {
                 <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-white opacity-10 group-hover:rotate-90 ease"></span>
                 <span className="relative flex items-center">
                   LinkedIn
-                  <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 ml-2" fill="#0077b5" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                   </svg>
                 </span>
@@ -886,14 +882,15 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-purple-900/70" />
             </div>
           </div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {/* Logo et Description */}
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <motion.div 
-                  className="relative w-40 h-12"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="relative w-32 sm:w-40 h-10 sm:h-12"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl rotate-3 opacity-70" />
                   <div className="absolute inset-0 bg-white rounded-xl -rotate-3" />
@@ -907,9 +904,9 @@ export default function App() {
                   Votre laverie automatique de confiance, ouverte 7j/7 pour répondre à tous vos besoins de lavage.
                 </p>
               </div>
-              
+
               {/* Navigation */}
-              <div>
+              <div className="mt-8 sm:mt-0">
                 <h3 className="text-lg font-semibold text-white mb-6">Navigation</h3>
                 <ul className="space-y-4">
                   <li>
@@ -941,9 +938,9 @@ export default function App() {
                   </li>
                 </ul>
               </div>
-              
+
               {/* Contact */}
-              <div>
+              <div className="mt-8 sm:mt-0">
                 <h3 className="text-lg font-semibold text-white mb-6">Contactez-nous</h3>
                 <ul className="space-y-4">
                   <li>
@@ -962,7 +959,7 @@ export default function App() {
               </div>
 
               {/* Horaires */}
-              <div>
+              <div className="mt-8 sm:mt-0">
                 <h3 className="text-lg font-semibold text-white mb-6">Horaires</h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-2 text-blue-100">
@@ -978,7 +975,7 @@ export default function App() {
             </div>
             
             <div className="mt-12 pt-8 border-t border-blue-800">
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0">
                 <p className="text-blue-100 text-sm">
                   &copy; {new Date().getFullYear()} Lav Express. Tous droits réservés.
                 </p>

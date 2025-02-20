@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Dégradé principal -->
+        <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#3B82F6"/>
+            <stop offset="100%" style="stop-color:#8B5CF6"/>
+        </linearGradient>
+        <!-- Dégradé pour l'effet de rotation -->
+        <linearGradient id="rotatedGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#60A5FA"/>
+            <stop offset="100%" style="stop-color:#A78BFA"/>
+        </linearGradient>
+    </defs>
+    <g>
+        <!-- Effet de rotation en arrière-plan (comme dans le logo du site) -->
+        <rect x="56" y="56" width="400" height="400" rx="32" 
+              transform="rotate(3, 256, 256)"
+              fill="url(#rotatedGradient)"
+              opacity="0.7"/>
+        
+        <!-- Rectangle principal -->
+        <rect x="56" y="56" width="400" height="400" rx="32" 
+              transform="rotate(-3, 256, 256)"
+              fill="white"/>
+        
+        <!-- Lettre "L" avec le dégradé -->
+        <path d="M160 160v192h192v-48H208V160z"
+              fill="url(#mainGradient)"/>
+    </g>
+</svg>

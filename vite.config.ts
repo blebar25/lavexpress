@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/lavexpress/',
   build: {
+    outDir: 'docs',
     sourcemap: true,
     rollupOptions: {
       output: {

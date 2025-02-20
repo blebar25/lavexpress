@@ -259,7 +259,7 @@ function LocationCarousel({ images }: LocationCarouselProps) {
       <AnimatePresence mode="wait">
         <motion.img
           key={currentImage}
-          src={`${images[currentImage]}?auto=format&fit=crop&q=80&w=800`}
+          src={images[currentImage]}
           alt="Laverie"
           className="w-full h-full object-cover"
           initial={{ opacity: 0 }}

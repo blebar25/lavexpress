@@ -85,9 +85,11 @@ const locations: Location[] = [
     lat: 48.9310795,
     lng: 2.3582699,
     images: [
-      'https://images.unsplash.com/photo-1545173168-9f1947eebb7f',
-      'https://images.unsplash.com/photo-1582735689369-4fe89db7114c',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      new URL('./assets/images/Pinel/Pinel1.jpeg', import.meta.url).href,
+      new URL('./assets/images/Pinel/Pinel2.jpeg', import.meta.url).href,
+      new URL('./assets/images/Pinel/Pinel3.jpeg', import.meta.url).href,
+      new URL('./assets/images/Pinel/Pinel4.jpeg', import.meta.url).href,
+      new URL('./assets/images/Pinel/Pinel5.jpeg', import.meta.url).href
     ],
     has6kgMachines: false
   },

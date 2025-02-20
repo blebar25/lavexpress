@@ -85,11 +85,9 @@ const locations: Location[] = [
     lat: 48.9310795,
     lng: 2.3582699,
     images: [
-      new URL('../src/assets/images/Pinel/Pinel1.jpeg', import.meta.url).href,
-      new URL('../src/assets/images/Pinel/Pinel2.jpeg', import.meta.url).href,
-      new URL('../src/assets/images/Pinel/Pinel3.jpeg', import.meta.url).href,
-      new URL('../src/assets/images/Pinel/Pinel4.jpeg', import.meta.url).href,
-      new URL('../src/assets/images/Pinel/Pinel5.jpeg', import.meta.url).href
+      new URL('./assets/images/Ramey/Ramey_1.jpeg', import.meta.url).href,
+      new URL('./assets/images/Ramey/Ramey_2.jpeg', import.meta.url).href,
+      new URL('./assets/images/Ramey/Ramey_3.jpeg', import.meta.url).href
     ],
     has6kgMachines: false
   },

@@ -426,7 +426,7 @@ export default function App() {
           <div className="absolute inset-0">
             <div className="relative h-full">
               <motion.img
-                src="/lavexpress/images/laverie.jpg"
+                src="/images/laverie.jpg"
                 alt="Lav Express"
                 className="w-full h-full object-cover"
                 initial={{ scale: 1.1, opacity: 0 }}
@@ -760,7 +760,8 @@ export default function App() {
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                   >
                     <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    <path d="M20 8h-3V6.22c0-2.61-1.91-4.94-4.51-5.19C9.51.74 7 3.08 7 6v2H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V10a2 2 0 00-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6z"/>
+    <path d="M12 13c.83 0 1.5.67 1.5 1.5S12.83 16 12 16s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm0-1.5a3 3 0 100 6 3 3 0 000-6z"/>
                     </svg>
                   </motion.div>
                   <h3 className="text-2xl font-semibold text-white mb-4">Formation complète</h3>
@@ -885,18 +886,14 @@ export default function App() {
             </div>
           </div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {/* Logo et Description */}
-              <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              <div className="col-span-1 sm:col-span-2 lg:col-span-1">
                 <motion.div 
-                  className="relative w-32 sm:w-40 h-10 sm:h-12"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl rotate-3 opacity-70" />
-                  <div className="absolute inset-0 bg-white rounded-xl -rotate-3" />
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center space-x-2 mb-4">
                     <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                       Lav Express
                     </span>
@@ -908,9 +905,9 @@ export default function App() {
               </div>
 
               {/* Navigation */}
-              <div className="mt-8 sm:mt-0">
-                <h3 className="text-lg font-semibold text-white mb-6">Navigation</h3>
-                <ul className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3 sm:mb-4">Navigation</h3>
+                <ul className="space-y-2 sm:space-y-3">
                   <li>
                     <a href="#prices" className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2">
                       <ArrowRight className="w-4 h-4" />
@@ -930,7 +927,7 @@ export default function App() {
                     </a>
                   </li>
                   <li>
-                  <button
+                    <button
                       onClick={() => setShowLegalNotice(true)}
                       className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2"
                     >
@@ -942,9 +939,9 @@ export default function App() {
               </div>
 
               {/* Contact */}
-              <div className="mt-8 sm:mt-0">
-                <h3 className="text-lg font-semibold text-white mb-6">Contactez-nous</h3>
-                <ul className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3 sm:mb-4">Contactez-nous</h3>
+                <ul className="space-y-2 sm:space-y-3">
                   <li>
                     <a href="tel:+33176350611" className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2">
                       <Phone className="w-4 h-4" />
@@ -961,9 +958,9 @@ export default function App() {
               </div>
 
               {/* Horaires */}
-              <div className="mt-8 sm:mt-0">
-                <h3 className="text-lg font-semibold text-white mb-6">Horaires</h3>
-                <div className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3 sm:mb-4">Horaires</h3>
+                <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center space-x-2 text-blue-100">
                     <Clock className="w-4 h-4 flex-shrink-0" />
                     <span>Ouvert de 7H00 à 22H00</span>
@@ -976,9 +973,9 @@ export default function App() {
               </div>
             </div>
             
-            <div className="mt-12 pt-8 border-t border-blue-800">
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0">
-                <p className="text-blue-100 text-sm">
+            <div className="mt-6 sm:mt-8 pt-6 border-t border-blue-800">
+              <div className="flex justify-center">
+                <p className="text-blue-100 text-sm text-center">
                   &copy; {new Date().getFullYear()} Lav Express. Tous droits réservés.
                 </p>
               </div>

@@ -128,9 +128,11 @@ const locations: Location[] = [
     lat: 48.8573974,
     lng: 2.3774104,
     images: [
-      'https://images.unsplash.com/photo-1545173168-9f1947eebb7f',
-      'https://images.unsplash.com/photo-1582735689369-4fe89db7114c',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      new URL('./assets/images/Popincourt/Popincourt_1.jpeg', import.meta.url).href,
+      new URL('./assets/images/Popincourt/Popincourt_2.jpeg', import.meta.url).href,
+      new URL('./assets/images/Popincourt/Popincourt_3.jpeg', import.meta.url).href,
+      new URL('./assets/images/Popincourt/Popincourt_4.jpeg', import.meta.url).href,
+      new URL('./assets/images/Popincourt/Popincourt_5.jpeg', import.meta.url).href
     ],
     has6kgMachines: false
   },
@@ -259,7 +261,7 @@ function LocationCarousel({ images }: LocationCarouselProps) {
       <AnimatePresence mode="wait">
         <motion.img
           key={currentImage}
-          src={`${images[currentImage]}?auto=format&fit=crop&q=80&w=800`}
+          src={images[currentImage]}
           alt="Laverie"
           className="w-full h-full object-cover"
           initial={{ opacity: 0 }}
@@ -426,7 +428,7 @@ export default function App() {
           <div className="absolute inset-0">
             <div className="relative h-full">
               <motion.img
-                src="/lavexpress/images/laverie.jpg"
+                src="/images/laverie.jpg"
                 alt="Lav Express"
                 className="w-full h-full object-cover"
                 initial={{ scale: 1.1, opacity: 0 }}
@@ -760,7 +762,8 @@ export default function App() {
                     transition={{ duration: 0.8, ease: "easeInOut" }}
                   >
                     <svg className="w-full h-full" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 3L1 9L5 11.18V17.18L12 21L19 17.18V11.18L21 10.09V17H23V9L12 3ZM18.82 9L12 12.72L5.18 9L12 5.28L18.82 9ZM17 15.99L12 18.72L7 15.99V12.27L12 15L17 12.27V15.99Z"/>
+                    <path d="M20 8h-3V6.22c0-2.61-1.91-4.94-4.51-5.19C9.51.74 7 3.08 7 6v2H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V10a2 2 0 00-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6z"/>
+    <path d="M12 13c.83 0 1.5.67 1.5 1.5S12.83 16 12 16s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm0-1.5a3 3 0 100 6 3 3 0 000-6z"/>
                     </svg>
                   </motion.div>
                   <h3 className="text-2xl font-semibold text-white mb-4">Formation complète</h3>
@@ -885,18 +888,14 @@ export default function App() {
             </div>
           </div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {/* Logo et Description */}
-              <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+              <div className="col-span-1 sm:col-span-2 lg:col-span-1">
                 <motion.div 
-                  className="relative w-32 sm:w-40 h-10 sm:h-12"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl rotate-3 opacity-70" />
-                  <div className="absolute inset-0 bg-white rounded-xl -rotate-3" />
-                  <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center space-x-2 mb-4">
                     <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                       Lav Express
                     </span>
@@ -908,9 +907,9 @@ export default function App() {
               </div>
 
               {/* Navigation */}
-              <div className="mt-8 sm:mt-0">
-                <h3 className="text-lg font-semibold text-white mb-6">Navigation</h3>
-                <ul className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3 sm:mb-4">Navigation</h3>
+                <ul className="space-y-2 sm:space-y-3">
                   <li>
                     <a href="#prices" className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2">
                       <ArrowRight className="w-4 h-4" />
@@ -930,7 +929,7 @@ export default function App() {
                     </a>
                   </li>
                   <li>
-                  <button
+                    <button
                       onClick={() => setShowLegalNotice(true)}
                       className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2"
                     >
@@ -942,9 +941,9 @@ export default function App() {
               </div>
 
               {/* Contact */}
-              <div className="mt-8 sm:mt-0">
-                <h3 className="text-lg font-semibold text-white mb-6">Contactez-nous</h3>
-                <ul className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3 sm:mb-4">Contactez-nous</h3>
+                <ul className="space-y-2 sm:space-y-3">
                   <li>
                     <a href="tel:+33176350611" className="text-blue-100 hover:text-white transition-colors inline-flex items-center space-x-2">
                       <Phone className="w-4 h-4" />
@@ -961,9 +960,9 @@ export default function App() {
               </div>
 
               {/* Horaires */}
-              <div className="mt-8 sm:mt-0">
-                <h3 className="text-lg font-semibold text-white mb-6">Horaires</h3>
-                <div className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-3 sm:mb-4">Horaires</h3>
+                <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-center space-x-2 text-blue-100">
                     <Clock className="w-4 h-4 flex-shrink-0" />
                     <span>Ouvert de 7H00 à 22H00</span>
@@ -976,9 +975,9 @@ export default function App() {
               </div>
             </div>
             
-            <div className="mt-12 pt-8 border-t border-blue-800">
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0">
-                <p className="text-blue-100 text-sm">
+            <div className="mt-6 sm:mt-8 pt-6 border-t border-blue-800">
+              <div className="flex justify-center">
+                <p className="text-blue-100 text-sm text-center">
                   &copy; {new Date().getFullYear()} Lav Express. Tous droits réservés.
                 </p>
               </div>

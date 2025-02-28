@@ -128,9 +128,11 @@ const locations: Location[] = [
     lat: 48.8573974,
     lng: 2.3774104,
     images: [
-      'https://images.unsplash.com/photo-1545173168-9f1947eebb7f',
-      'https://images.unsplash.com/photo-1582735689369-4fe89db7114c',
-      'https://images.unsplash.com/photo-1574538298279-26973f60efa3'
+      new URL('./assets/images/Popincourt/Popincourt_1.jpeg', import.meta.url).href,
+      new URL('./assets/images/Popincourt/Popincourt_2.jpeg', import.meta.url).href,
+      new URL('./assets/images/Popincourt/Popincourt_3.jpeg', import.meta.url).href,
+      new URL('./assets/images/Popincourt/Popincourt_4.jpeg', import.meta.url).href,
+      new URL('./assets/images/Popincourt/Popincourt_5.jpeg', import.meta.url).href
     ],
     has6kgMachines: false
   },

@@ -56,6 +56,7 @@ className="bg-gradient-to-b from-gray-900 to-gray-800 text-white rounded-xl max-
                 <li>Capital social : 	40 000,00 €</li>
                 <li>Siège social : 7 RUE BENJAMIN FRANKLIN, 75016 PARIS</li>
                 <li>SIRET : 81386676100139</li>
+                <li>Directeur de la publication : Sacha Russo</li>
               </ul>
             </section>
 

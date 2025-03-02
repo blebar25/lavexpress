@@ -48,22 +48,25 @@ className="bg-gradient-to-b from-gray-900 to-gray-800 text-white rounded-xl max-
             <section className="bg-gray-800 bg-opacity-50 p-6 rounded-lg">
               <h2 className="text-2xl font-semibold mb-4">1. Informations légales</h2>
               <p className="mb-4">
-                Le site laveriexpert.com est édité par :
+                Le site lavexpress-pro.fr est édité par :
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Société : Laverie Expert</li>
-                <li>Forme juridique : [À COMPLÉTER]</li>
-                <li>Capital social : [À COMPLÉTER]</li>
-                <li>Siège social : [À COMPLÉTER]</li>
-                <li>SIRET : [À COMPLÉTER]</li>
-                <li>Directeur de la publication : [À COMPLÉTER]</li>
+                <li>Société : LAV EXPRESS</li>
+                <li>Forme juridique : SARL, société à responsabilité limitée</li>
+                <li>Capital social : 	40 000,00 €</li>
+                <li>Siège social : 7 RUE BENJAMIN FRANKLIN, 75016 PARIS</li>
+                <li>SIRET : 81386676100139</li>
               </ul>
             </section>
 
             <section className="bg-gray-800 bg-opacity-50 p-6 rounded-lg">
               <h2 className="text-2xl font-semibold mb-4">2. Hébergement</h2>
               <p>
-                Le site est hébergé par GitHub Pages.
+              Le site est hébergé par :
+Hostinger International Ltd
+Adresse : 61 Lordou Vironos Street, 6023 Larnaca, Chypre
+Site web : https://www.hostinger.fr
+Téléphone : +33 1 76 54 41 25
               </p>
             </section>
 
@@ -72,7 +75,7 @@ className="bg-gradient-to-b from-gray-900 to-gray-800 text-white rounded-xl max-
               <p className="mb-4">
                 L'ensemble du contenu de ce site (textes, images, vidéos, etc.) est protégé par le droit d'auteur. 
                 Toute reproduction ou représentation, totale ou partielle, de ce site ou de son contenu est interdite 
-                sans l'autorisation expresse de Laverie Expert.
+                sans l'autorisation expresse de LAV EXPRESS.
               </p>
             </section>
 
